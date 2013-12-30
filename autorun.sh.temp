@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# 2013 Citon Computer Corporation
+# Author: Paul Hirsch <paul.hirsch@citon.com>
+
+# Simple hook script to run one or more files on startup.  You just need to set
+# AUTOBASE below and then install this script into your QNap config partition.
+
+AUTOBASE=__AUTOBASE__
+
+for i in `ls ${AUTOBASE}/*.auto`; do echo "Running $i"; (cd ${AUTOBASE} ; . $i) ; done
+

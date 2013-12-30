@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Restore files from GNUPGPBACKUP to root's GnuPG folder
+GNUPGBACKUP=/__AUTOBASE__/gnupg
+
+mkdir -p /root/.gnupg
+cp -rp ${GNUPGBACKUP}/* /root/.gnupg/
